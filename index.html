@@ -1,0 +1,103 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport"
+          content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <link rel="stylesheet" href="styles.css">
+    <title>Lesson_5</title>
+</head>
+<body>
+    
+    <div id="task1">
+    <h2>Калькулятор швидкості</h2>
+    <label for="distance">Відстань (км):</label>
+    <input type="number" id="distance" placeholder="Введіть відстань">
+    <br>
+    <label for="time">Час (год):</label>
+    <input type="number" id="time" placeholder="Введіть час">
+    <br>
+    <button onclick="calculateSpeed()">Обрахувати</button>
+    <div id="result"></div>
+
+    <script>
+        function calculateSpeed() {
+            let distance = parseFloat(document.getElementById('distance').value);
+            let time = parseFloat(document.getElementById('time').value);
+            
+            if (isNaN(distance) || isNaN(time) || time <= 0) {
+                document.getElementById('result').innerText = 'Будь ласка, введіть коректні значення!';
+                return;
+            }
+            
+            let speed = distance / time;
+            document.getElementById('result').innerText = `Швидкість: ${speed.toFixed(2)} км/год`;
+        }
+    </script>
+    </div>
+
+<div id="task2">
+    <h2>Калькулятор трикутника</h2>
+    <label for="cathetus1">Катет 1 (см):</label>
+    <input type="number" id="cathetus1" placeholder="Введіть катет 1">
+    <br>
+    <label for="cathetus2">Катет 2 (см):</label>
+    <input type="number" id="cathetus2" placeholder="Введіть катет 2">
+    <br>
+    <button onclick="calculateTriangle()">Обрахувати</button>
+    <div id="result2"></div>
+
+    <script>
+        function calculateTriangle() {
+            let a = parseFloat(document.getElementById('cathetus1').value);
+            let b = parseFloat(document.getElementById('cathetus2').value);
+            
+            if (isNaN(a) || isNaN(b) || a <= 0 || b <= 0) {
+                document.getElementById('result2').innerText = 'Будь ласка, введіть коректні значення!';
+                return;
+            }
+            
+            let hypotenuse = Math.sqrt(a * a + b * b);
+            let perimeter = a + b + hypotenuse;
+            let area = (a * b) / 2;
+            
+            document.getElementById('result2').innerHTML = `
+                Гіпотенуза: ${hypotenuse.toFixed(2)} см<br>
+                Периметр: ${perimeter.toFixed(2)} см<br>
+                Площа: ${area.toFixed(2)} см²
+            `;
+        }
+    </script>
+</div>
+
+<div id="task3">
+    <h2>Калькулятор площі круга</h2>
+    <label for="radius">Радіус (см):</label>
+    <input type="number" id="radius" placeholder="Введіть радіус">
+    <br>
+    <button onclick="calculateCircleArea()">Обрахувати</button>
+    <div id="result3"></div>
+
+    <script>
+        function calculateCircleArea() {
+            let radius = parseFloat(document.getElementById('radius').value);
+            
+            if (isNaN(radius) || radius <= 0) {
+                document.getElementById('result3').innerText = 'Будь ласка, введіть коректне значення!';
+                return;
+            }
+            
+            let area = Math.PI * radius * radius;
+            
+            document.getElementById('result3').innerHTML = `
+                Площа круга: ${area.toFixed(2)} см²
+            `;
+        }
+    </script>
+</div>
+
+</body>
+</html>
+
+

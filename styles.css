@@ -1,0 +1,23 @@
+#task1{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    background-color: aquamarine;
+}
+
+#task2{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    background-color: rgb(146, 159, 219);
+}
+
+#task3{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    background-color: rgb(219, 146, 174);
+}
