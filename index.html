@@ -97,6 +97,73 @@
     </script>
 </div>
 
+<div id="task4">
+    <h2>Обчислення периметра, площі та діагоналі квадрата</h2>
+    <label for="side">Введіть сторону квадрата:</label>
+    <input type="number" id="side" step="any">
+    <button onclick="calculateSquare()">Обчислити</button> 
+    <p id="result4"></p>
+
+    <script>
+        function calculateSquare() {
+            let side = parseFloat(document.getElementById("side").value);
+            if (isNaN(side) || side <= 0) {
+                document.getElementById("result4").innerHTML = "Будь ласка, введіть коректне додатнє число";
+                return;
+            }
+            let perimeter = (4 * side).toFixed(1);
+            let area = (side * side).toFixed(1);
+            let diagonal = (Math.sqrt(2) * side).toFixed(1);
+            document.getElementById("result4").innerHTML = 
+                `Периметр: ${perimeter} <br> Площа: ${area} <br> Діагональ: ${diagonal}`;
+        }
+    </script>
+</div>
+
+
+<div id="task5">
+    <h2>Обчислення sin та cos кута</h2>
+    <label for="angle">Введіть величину кута (градуси):</label>
+    <input type="number" id="angle" step="1">
+    <button onclick="calculateTrig()">Обчислити</button>
+    <p id="result5"></p>
+
+    <script>
+        function calculateTrig() {
+            let angle = parseInt(document.getElementById("angle").value);
+            if (isNaN(angle)) {
+                document.getElementById("result5").innerHTML = "Будь ласка, введіть коректне ціле число";
+                return;
+            }
+            let radians = angle * Math.PI / 180;
+            let sinValue = Math.sin(radians).toFixed(5);
+            let cosValue = Math.cos(radians).toFixed(5);
+            document.getElementById("result5").innerHTML = 
+                `sin(${angle}°) = ${sinValue} <br> cos(${angle}°) = ${cosValue}`;
+        }
+    </script>
+</div>
+
+<div id="task6">
+    <h2>Обчислення радіуса кола</h2>
+    <label for="circumference">Введіть довжину кола:</label>
+    <input type="number" id="circumference" step="any">
+    <button onclick="calculateRadius()">Обчислити</button>
+    <p id="result6"></p>
+
+    <script>
+        function calculateRadius() {
+            let circumference = parseFloat(document.getElementById("circumference").value);
+            if (isNaN(circumference) || circumference <= 0) {
+                document.getElementById("result6").innerHTML = "Будь ласка, введіть коректне додатнє число";
+                return;
+            }
+            let radius = (circumference / (2 * Math.PI)).toFixed(3);
+            document.getElementById("result6").innerHTML = `Радіус кола: ${radius}`;
+        }
+    </script>
+</div>
+
 </body>
 </html>
 

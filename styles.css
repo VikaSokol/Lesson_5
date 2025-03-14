@@ -21,3 +21,26 @@
     width: auto;
     background-color: rgb(219, 146, 174);
 }
+
+#task4{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    background-color: rgb(219, 179, 146);
+}
+#task5{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    background-color: rgb(170, 236, 197);
+}
+
+#task6{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    background-color: rgb(253, 194, 194);
+}
