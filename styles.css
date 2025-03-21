@@ -44,3 +44,19 @@
     width: auto;
     background-color: rgb(253, 194, 194);
 }
+
+#task7{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    background-color: rgb(154, 241, 237);
+}
+
+#task8{
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    width: auto;
+    background-color: rgb(247, 244, 212);
+}

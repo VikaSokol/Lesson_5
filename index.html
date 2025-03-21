@@ -164,6 +164,60 @@
     </script>
 </div>
 
+
+<div id="task7">
+<title>Обчислення виразу</title>
+    <script>
+        function calculate() {
+            let x = parseFloat(document.getElementById("inputX").value);
+            if (isNaN(x)) {
+                alert("Будь ласка, введіть коректне число.");
+                return;
+            }
+            let y = Math.abs(x * 5 - 2) + 3;
+            document.getElementById("result7").textContent = "Результат: " + y.toFixed(3);
+        }
+    </script>
+    <h2>Обчислення виразу y = |x * 5 - 2| + 3</h2>
+    <label for="inputX">Введіть x:</label>
+    <input type="number" id="inputX" step="any">
+    <button onclick="calculate()">Обчислити</button>
+    <p id="result7"></p>
+</div>
+
+
+<div id="task8">
+    <title>Обчислення радіусу внутрішнього кола</title>
+    <script>
+        function calculateInnerRadius() {
+            let area = parseFloat(document.getElementById("inputArea").value);
+            let outerRadius = parseFloat(document.getElementById("inputOuterRadius").value);
+            
+            if (isNaN(area) || isNaN(outerRadius) || outerRadius <= 0 || area <= 0) {
+                alert("Будь ласка, введіть коректні значення.");
+                return;
+            }
+            
+            let innerRadius = Math.sqrt(outerRadius * outerRadius - area / Math.PI);
+            
+            if (isNaN(innerRadius) || innerRadius < 0) {
+                alert("Неможливо обчислити радіус внутрішнього кола.");
+                return;
+            }
+            
+            document.getElementById("result8").textContent = "Радіус внутрішнього кола: " + innerRadius.toFixed(2);
+        }
+    </script>
+    <h2>Обчислення радіусу внутрішнього кола</h2>
+    <label for="inputArea">Введіть площу кільця:</label>
+    <input type="number" id="inputArea" step="any"><br><br>
+    <label for="inputOuterRadius">Введіть радіус зовнішнього кола:</label>
+    <input type="number" id="inputOuterRadius" step="any"><br><br>
+    <button onclick="calculateInnerRadius()">Обчислити</button>
+    <p id="result8"></p>
+</div>
+
+
 </body>
 </html>
 
